@@ -51,7 +51,7 @@ public class GraphUtils {
             Set<V> dependencies = entry.getValue();
             // make sure we can satisfy all dependencies before continuing
             // TODO: this should probably done outside so it can be handled better.
-            if (!graph.vertexSet().containsAll(dependencies)) {
+            if (dependencies == null || !graph.vertexSet().containsAll(dependencies)) {
                 continue;
             }
 
@@ -142,6 +142,20 @@ public class GraphUtils {
         Set<DefaultEdge> edges = graph.outgoingEdgesOf(source);
         Set<V> targets = new LinkedHashSet<V>();
         for (DefaultEdge edge : edges) {
+            targets.add(graph.getEdgeTarget(edge));
+        }
+        return targets;
+    }
+
+    /**
+     * Fetch all of the dependencies of the given source vertex
+     * @return mutable snapshot of the target vertices of all outgoing edges
+     */
+    public static <V> Set<V> getOutgoingVerticesRecursion(DirectedGraph<V, DefaultEdge> graph, V source) {
+        Set<DefaultEdge> edges = graph.outgoingEdgesOf(source);
+        Set<V> targets = new LinkedHashSet<V>();
+        for (DefaultEdge edge : edges) {
+            targets.addAll(getOutgoingVertices(graph, graph.getEdgeTarget(edge)));
             targets.add(graph.getEdgeTarget(edge));
         }
         return targets;

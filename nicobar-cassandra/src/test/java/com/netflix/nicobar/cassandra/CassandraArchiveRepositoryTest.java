@@ -135,11 +135,11 @@ public class CassandraArchiveRepositoryTest {
         ScriptModuleSpec moduleSpec = jarArchive.getModuleSpec();
         String serialized = config.getModuleSpecSerializer().serialize(moduleSpec);
         byte[] jarBytes = Files.readAllBytes(jarFilePath);
-        columns.put(Columns.shard_num.name(), repository.calculateShardNum(moduleSpec.getModuleId()));
-        columns.put(Columns.last_update.name(), jarArchive.getCreateTime());
-        columns.put(Columns.archive_content.name(), jarBytes);
-        columns.put(Columns.archive_content_hash.name(), repository.calculateHash(jarBytes));
-        columns.put(Columns.module_spec.name(), serialized);
+//        columns.put(Columns.shard_num.name(), repository.calculateShardNum(moduleSpec.getModuleId()));
+//        columns.put(Columns.last_update.name(), jarArchive.getCreateTime());
+//        columns.put(Columns.archive_content.name(), jarBytes);
+//        columns.put(Columns.archive_content_hash.name(), repository.calculateHash(jarBytes));
+//        columns.put(Columns.module_spec.name(), serialized);
 
         ArgumentCaptor<String> argument1 = ArgumentCaptor.forClass(String.class);
         ArgumentCaptor<Map> argument2 = ArgumentCaptor.forClass(Map.class);
