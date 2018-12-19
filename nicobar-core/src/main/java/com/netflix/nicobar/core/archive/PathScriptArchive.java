@@ -113,7 +113,7 @@ public class PathScriptArchive implements ScriptArchive {
                 }
                 // create a default spec
                 if (buildModuleSpec == null) {
-                    ModuleId moduleId = ModuleId.create(this.rootDirPath.getFileName().toString());
+                    ModuleId moduleId = ModuleId.fromString(this.rootDirPath.getFileName().toString());
                     buildModuleSpec = new ScriptModuleSpec.Builder(moduleId).build();
                 }
             }

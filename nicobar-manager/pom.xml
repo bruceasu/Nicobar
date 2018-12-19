@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright 2017 The MIT Internet Trust Consortium
+   
+    Portions copyright 2011-2013 The MITRE Corporation
+   
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+   
+      http://www.apache.org/licenses/LICENSE-2.0
+   
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!--<parent>-->
+        <!--<groupId>com.netflix.Nicobar</groupId>-->
+        <!--<artifactId>nicobar</artifactId>-->
+        <!--<version>0.3.2</version>-->
+    <!--</parent>-->
+    <groupId>com.netflix.Nicobar</groupId>
+    <version>0.3.2</version>
+    <artifactId>nicobar-manager</artifactId>
+    <packaging>war</packaging>
+
+    <name>nicobar-manager</name>
+    <properties>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.netflix.Nicobar</groupId>
+            <artifactId>nicobar-core</artifactId>
+            <version>0.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.netflix.pytheas</groupId>
+            <artifactId>pytheas-core</artifactId>
+            <version>1.11</version>
+        </dependency>
+        <dependency>
+            <groupId>com.netflix.karyon</groupId>
+            <artifactId>karyon-core</artifactId>
+            <version>1.0.22</version>
+        </dependency>
+        <dependency>
+            <groupId>com.netflix.karyon</groupId>
+            <artifactId>karyon-extensions</artifactId>
+            <version>1.0.22</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-server</artifactId>
+            <version>7.6.7.v20120910</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-servlet</artifactId>
+            <version>7.6.7.v20120910</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-core</artifactId>
+            <version>1.17.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-server</artifactId>
+            <version>1.17.1</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>asm</artifactId>
+                    <groupId>asm</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-servlet</artifactId>
+            <version>1.17.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey.contribs</groupId>
+            <artifactId>jersey-multipart</artifactId><version>1.17.1</version>
+
+        </dependency>
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>jsr311-api</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.2.4</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.google.inject.extensions/guice-servlet-->
+        <dependency>
+            <groupId>com.google.inject.extensions</groupId>
+            <artifactId>guice-servlet</artifactId>
+            <version>4.1.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.netflix.governator/governator -->
+        <!-- https://mvnrepository.com/artifact/com.netflix.governator/governator-archaius -->
+        <dependency>
+            <groupId>com.netflix.governator</groupId>
+            <artifactId>governator-archaius</artifactId>
+            <version>1.17.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>1.10.19</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
